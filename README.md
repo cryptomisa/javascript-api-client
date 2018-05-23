@@ -21,8 +21,7 @@ api(options).bounties.all();
 | network | mainnet | etherium block chain network
 | idx_status | open | 
 | order_by | -web3_created | 
-| limit | None | 
-| offset | 0 |
+| limit | None | max number of bounties return per page
 | raw_data |
 | experience_level | 
 | project_length | 

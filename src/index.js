@@ -1,13 +1,25 @@
 import axios from 'axios';
 
-const baseUrl = 'https://gitcoin.co/api/v2/bounties';
+const baseUrl = 'https://gitcoin.co/api/v0.1/bounties';
 
 class Api {
 
   constructor(options = {}) {
+    const _options = {};
+
+    Object.assign(_options, options);
     this._bounties = {
       all() {
-        return axios.get(baseUrl, { params: options })
+        return this.page();
+      },
+
+      page(offset, limit) {
+        const params = {};
+
+        Object.assign(params, _options);
+        if (limit > 0) params.limit = limit;
+        if (offset >= 0) params.offset = offset;
+        return axios.get(baseUrl, { params })
           .then(res => res.data);
       }
     };
