@@ -1,4 +1,4 @@
-# Gitcoin Sdk
+# Cryptomisa Sdk
 Gitcoin Javascript API Client
 
 ## Usage
